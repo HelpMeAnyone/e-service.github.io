@@ -1,0 +1,236 @@
+/* Стилизация главного контейнера */
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+  --scale-factor: 1; /* По умолчанию масштаб 100% */
+}
+
+/* На очень широких экранах увеличиваем масштаб */
+@media (min-width: 2000px) {
+  :root {
+    --scale-factor: 1.2; /* Увеличиваем на 20% */
+  }
+}
+
+@media (min-width: 2500px) {
+  :root {
+    --scale-factor: 1.4; /* Увеличиваем на 40% */
+  }
+}
+/* Большие десктопы (≥1200px) */
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1140px;
+    }
+}
+
+/* Планшеты (768px - 991px) */
+@media (max-width: 991.98px) {
+    .navbar-collapse {
+        background: white;
+        padding: 15px;
+    }
+    
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Телефоны (576px - 767px) */
+@media (max-width: 767.98px) {
+    h1 {
+        font-size: 1.8rem;
+    }
+    
+    .hero-section {
+        text-align: center;
+        padding: 2rem 0;
+    }
+    
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Маленькие телефоны (<576px) */
+@media (max-width: 575.98px) {
+    html {
+        font-size: 14px;
+    }
+    
+    .btn {
+        padding: 12px 20px;
+        font-size: 16px; /* Важно для iOS */
+    }
+    
+    .container {
+        padding: 0 10px;
+    }
+}
+
+/* Ландшафтная ориентация на мобильных */
+@media (max-height: 500px) and (orientation: landscape) {
+    .hero-section {
+        padding: 1rem 0;
+        min-height: auto;
+    }
+}
+
+/* Применяем масштаб к основным элементам */
+body {
+  transform: scale(var(--scale-factor));
+  transform-origin: top center; /* Точка трансформации - сверху по центру */
+  width: calc(100% / var(--scale-factor)); /* Компенсируем изменение ширины */
+  height: calc(100vh / var(--scale-factor)); /* Компенсируем изменение высоты */
+  margin: 0 auto;
+}
+
+/* Размер текста главного контента страницы Контакты */
+.main-content {
+    flex: 1;
+}
+.main-content li {
+    font-size: 1.4em; }
+.main-content label {
+    font-size: 1.4em; }
+.main-content .btn {
+    font-size: 1.4em;
+}
+
+/* Стайлинг герой-секции */
+.hero-section {
+    background-color: #323A8A; /* Светло-серый фон для герой-секции */
+    color: white;
+    padding: 2em;
+    text-align: center;
+}
+.hero-section .btn {
+    background-color: ffffff !important; /* Зелёный цвет для кнопки */
+    border-color: #ffffff !important;
+    color: #323A8A !important; /* Белый текст для контраста */
+}
+
+.col-md-6 h2{
+    color: #10175A !important;
+    font-weight: 600 !important;
+    font-size: 1.7em !important;
+}
+.col-md-6 p{
+    color: #10175A !important;
+    font-weight: 200 !important;
+    font-size: 1.2em !important;
+}
+
+/* Стайлинг навигационной панели */
+nav {
+    background-color: #333;
+    padding: 1em;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 1em;
+}
+
+nav ul li a {
+    color: #323a8a !important; /* Увеличена специфичность для переопределения */
+    text-decoration: none;
+    font-weight: 700 !important;
+}
+nav ul li a:link, nav ul li a:visited, nav ul li a:active {
+    font-weight: 700 !important;
+    font-size: 1.3em;
+}
+nav ul li a:hover {
+    color: #323a8a !important; /* Цвет при наведении */
+}
+
+/* Стайлинг карточек страницы Услуги */
+.p-5 h2 {
+    color: #10175A !important; /* Цвет заголовка "Наши услуги" */
+}
+
+.p-5 h3 {
+    color: #10175A !important; /* Цвет заголовков карточек */
+}
+
+.p-5 p {
+    color: #10175A !important; /* Цвет текста карточек */
+    font-size: 1.3em !important;
+}
+.p-5 li {
+    color: #10175A !important; /* Цвет текста карточек */
+}
+
+
+/* Центрирование и стайлинг последней карточки */
+.last-card-container {
+    display: flex;
+    justify-content: center;
+}
+.last-card {
+    background-color: #f9f9f9;
+    padding: 1em;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 33%;
+}
+.last-card h3 {
+    margin: 0.5em 0;
+    color: #10175A !important; /* Цвет заголовка последней карточки */
+}
+
+.last-card p {
+    font-size: 0.9em;
+    color: #10175A !important; /* Цвет текста последней карточки */
+}
+
+/* Стайлинг кнопок на страницах Контакты и Услуги */
+.btn {
+    background-color: #323A8A !important; /* Синий цвет для кнопки */
+    border-color: #323A8A !important;
+    color: #ffffff !important; /* Белый текст для контраста */
+}
+.col-md-6 li {
+    color: #10175A;
+}
+/* Стайлинг сообщений обработки событий формы обратной связи */
+.form-message {
+            margin-top: 1rem;
+            padding: 1rem;
+            border-radius: 5px;
+        }
+        .form-message.success {
+            background-color: #d4edda;
+            color: #155724;
+        }
+        .form-message.error {
+            background-color: #f8d7da;
+            color: #721c24;
+        }
+/* Стайлинг футера */
+footer {
+    background-color: #323a8a;
+    color: white;
+    text-align: center;
+    padding: 1em;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
